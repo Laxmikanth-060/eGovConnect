@@ -20,7 +20,7 @@ export const getService = async(req,res) => {
 
 export const addService = async(req,res) => {
 
-    const{name,description,dept,docs,officers,time,fee,reference,application}=req.body;
+    const{name,description,dept,docs,officers,time,fee,reference,eligibility}=req.body;
     const title=name.toLowerCase();
     const existingService = await Service.findOne({ name:title });
     if (existingService) {
@@ -37,6 +37,7 @@ export const addService = async(req,res) => {
         fee:fee,
         reference:reference,
         isActive:true,
+        eligibility:eligibility,
     });
 
     if(newService){

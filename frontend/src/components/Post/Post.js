@@ -14,6 +14,7 @@ const [officers,setOfficers]=useState("");
 const [time,setTime]=useState("");
 const [fee,setFee]=useState("");
 const [reference,setReference]=useState("");
+const [eligibility,setEligibility]=useState("");
 const [application,setApplicatin]=useState("");
 
 const url =process.env.REACT_APP_BACKEND_URL;
@@ -32,7 +33,8 @@ const submitHandler=async(e)=>{
           time,
           fee,
           reference,
-          application
+          application,
+          eligibility
       });
 
       if(data.data.message==="Added Successfully")
@@ -92,6 +94,18 @@ const submitHandler=async(e)=>{
        sx={{ width: "350px" }}
        /></div>
 
+<div className='post-main-container'>
+<p>Eligibility </p>
+  <TextField 
+       type="text"
+       placeholder="Eligibility Criteria"
+       name="eligibility"
+       value={eligibility}
+       onChange={(e) => setEligibility(e.target.value)}
+       required
+       label="Eligibility" variant="outlined"
+       sx={{ width: "350px" }}
+       /></div>
 
 <div className='post-main-container'>
   <p>Documents </p>
@@ -157,7 +171,7 @@ const submitHandler=async(e)=>{
       sx={{ width: "350px" }}
       label="Reference" variant="outlined" /></div>
 
-    <div className='post-main-container'>
+    {/* <div className='post-main-container'>
       <p>Application Form </p>
       <TextField 
        type="file"
@@ -167,7 +181,7 @@ const submitHandler=async(e)=>{
        onChange={(e) => setApplicatin(e.target.value)}
        variant="outlined" 
        sx={{ width: "350px" }}
-       /></div>
+       /></div> */}
 
     <button className='post-button'>Register Service</button>
     </div>

@@ -24,6 +24,7 @@ const [officers,setOfficers]=useState("-");
 const [time,setTime]=useState("-");
 const [fee,setFee]=useState("-");
 const [reference,setReference]=useState("");
+const [eligibility,setEligibility]=useState("");
 
 const url = process.env.REACT_APP_BACKEND_URL;
 
@@ -39,6 +40,7 @@ useEffect(() => {
       setTime(response.data.service.time);
       setFee(response.data.service.fee);
       setReference(response.data.service.reference);
+      setEligibility(response.data.service.eligibility);
 
     } catch (err) {
       alert("Currently this service is not available.");
@@ -140,6 +142,34 @@ useEffect(() => {
       </AccordionDetails>
     </Accordion>
 
+
+    <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}
+    sx={{
+      backgroundColor: 'rgba(255, 255, 255, 0.5)', 
+      boxShadow: 'none', 
+      // border: '1px solid rgba(0, 0, 0, 0.2)', 
+      borderRadius: '8px', 
+    }}>
+      <AccordionSummary
+        expandIcon={<ExpandMoreIcon />}
+        aria-controls="panel3bh-content"
+        id="panel3bh-header">
+        <Typography sx={{ width: '33%', flexShrink: 0 , ml: 2,p:1, fontWeight: 'bold'}}>
+          Eligibility
+        </Typography>
+        <Typography sx={{ color: 'text.main',p:1 }}>
+          {eligibility}
+        </Typography>
+      </AccordionSummary>
+      <AccordionDetails>
+        <Typography sx={{ p:1, ml: 2}}>
+        Learn about the responsible department managing this service. This ensures clarity about 
+        which governmental or organizational body oversees the process.
+        </Typography>
+      </AccordionDetails>
+    </Accordion>
+
+
     
     <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}
     sx={{
@@ -236,7 +266,7 @@ useEffect(() => {
           Prescribed Fee (by Govt.)
         </Typography>
         <Typography sx={{ color: 'text.main',p:1 }}>
-          {fee}
+          Rs. {fee} /-
         </Typography>
       </AccordionSummary>
       <AccordionDetails>

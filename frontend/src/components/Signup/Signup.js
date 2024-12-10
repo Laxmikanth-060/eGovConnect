@@ -1,11 +1,13 @@
 import React, { useContext } from 'react'
 import { useState} from 'react';
 import {Link,useNavigate} from 'react-router-dom'
+import Button from '@mui/material/Button';
 import axios from 'axios';
 import './Signup.css'
 import Alert from '@mui/material/Alert';
 import Loader from './../../utils/Loader/Loader'
 import {UserContext} from '../../context/UserContext'
+import {TextField } from "@mui/material";
 
 function Signup() {
 
@@ -40,7 +42,7 @@ function Signup() {
     e.preventDefault();
    
     const { username, fullname, email, mobile, password, confirmPassword } = formData;
-
+    console.log(username);
     const pattern = /^[0-9]{10}$/;
 
     if(!pattern.test(mobile)){
@@ -75,7 +77,6 @@ function Signup() {
         password,
       }, { withCredentials: true });
 
-      console.log(user);
 
       // const { userData } = await axios.get(`${url}/api/auth/authCheck`,{
       //   withCredentials:true,
@@ -97,97 +98,120 @@ function Signup() {
   };
 
 
+//   iv className="form-group">
+//   <label htmlFor="username">User Name</label>
+//   <input
+//     type="text"
+//     id="username"
+//     name="username"
+//     placeholder="Enter User name"
+//     value={formData.username}
+//     onChange={handleChange}
+//     required
+//   />
+// </div>
 
   return (
     <div className="signup-parent-container">
-    <div className="signup-container">
-      <div className="signup-box">
-        <h2>Create Your Account</h2>
-        <form className="signup-form" onSubmit={handleSubmit}>
-        {showAlert && <Alert severity="error">{error}</Alert>}
-        {loading && <Loader/>}
-          <div className="form-group">
-            <label htmlFor="fullname">Full Name</label>
-            <input
-              type="text"
-              id="fullname"
-              name="fullname"
-              placeholder="Enter your name"
-              value={formData.fullname}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="username">User Name</label>
-            <input
-              type="text"
-              id="username"
-              name="username"
-              placeholder="Enter User name"
-              value={formData.username}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="mobile">Mobile</label>
-            <input
-              type="tel"
-              id="mobile"
-              name="mobile"
-              placeholder="Enter mobile number"
-              value={formData.mobile}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter your email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Enter your password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="confirmPassword">Confirm Password</label>
-            <input
-              type="password"
-              id="confirmPassword"
-              name="confirmPassword"
-              placeholder="Confirm your password"
-              value={formData.confirmPassword}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <button type="submit" className="submit-btn">Sign Up</button>
-        </form>
-        <p className="login-link">
-          Already have an account? <Link to="/login">Log in</Link>
-        </p>
-      </div>
-    </div>
+      <div className='signup-text-container'>
 
+      <h2 className='signup-title'>Signup</h2>
+      {showAlert && <Alert severity="error"
+     sx={{
+      width: '50%',        
+      margin: '0 auto',   
+      textAlign: 'center',  
+    }}
+      >{error}</Alert>}
+      {loading && <Loader/>}
+    <form onSubmit={handleSubmit} className='signup-form'>
+
+       <div className='post-main-container'>
+        <p>Fullname </p>
+        <TextField 
+       type="text"
+       placeholder="Fullname"
+       name="fullname"
+       value={formData.fullname}
+       onChange={handleChange}
+       required
+       label="fullname" variant="outlined"
+       sx={{ width: "250px" }}
+      /></div>
+
+<div className='post-main-container'>
+        <p>Email</p>
+        <TextField 
+       type="email"
+       placeholder="Email"
+       name="email"
+       value={formData.email}
+       onChange={handleChange}
+       required
+       label="email" variant="outlined"
+       sx={{ width: "250px" }}
+      /></div>
+
+<div className='post-main-container'>
+        <p>Mobile</p>
+        <TextField 
+       type="text"
+       placeholder="Mobile No."
+       name="mobile"
+       value={formData.mobile}
+       onChange={handleChange}
+       required
+       label="mobile" variant="outlined"
+       sx={{ width: "250px" }}
+      /></div>
+
+<div className='post-main-container'>
+        <p>Username </p>
+        <TextField 
+       type="text"
+       placeholder="Username"
+       name="username"
+       value={formData.username}
+       onChange={handleChange}
+       required
+       label="username" variant="outlined"
+       sx={{ width: "250px" }}
+      /></div>
+ 
+ <div className='post-main-container'>
+        <p>Password </p>
+        <TextField 
+       type="password"
+       placeholder="Password"
+       name="password"
+       value={formData.password}
+       onChange={handleChange}
+       required
+       label="password" variant="outlined"
+       sx={{ width: "250px" }}
+      /></div>
+
+<div className='post-main-container'>
+        <p>Confirm Password </p>
+        <TextField 
+       type="password"
+       placeholder="confirmpassword"
+       name="confirmPassword"
+       value={formData.confirmPassword}
+       onChange={handleChange}
+       required
+       label="confirmpassword" variant="outlined"
+       sx={{ width: "250px" }}
+      /></div>
+
+
+<Button variant="contained" style={{ margin: '25px',padding:'8px 40px' }}>Signup</Button>
+    </form>
+
+      </div>
+      {/* <img className='sinupImg' src='signup.png'></img> */}
     </div>
-  )
+  ) 
 }
 
 export default Signup

@@ -47,10 +47,10 @@
     border-radius: 0.5em;
     font-size: medium;
     font-weight: 500;
-    background-color: rgb(72, 105, 167);
+    background-color: rgb(68, 65, 231);
 }
 
 .post-button:hover{
     cursor: pointer;
-    background-color: rgb(53, 80, 131);;
+    background-color: rgb(20, 23, 172);;
 }

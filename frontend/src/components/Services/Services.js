@@ -60,7 +60,8 @@ function Services() {
           <Link to='/services/personal/deathcertificate' className='service-link'><Card img="" name="Death Certificate" bg="#e74c3c"/></Link>
           <Link to='/services/personal/pancard' className='service-link'><Card img="" name="Pan Card" bg='#de2057'/></Link>
           <Link to='/services/personal/passport' className='service-link'><Card img="" name="Passport" bg=' #e67e22 '/></Link>
-          <Link to='/services/personal/drivinglicense' className='service-link'><Card img="" name="Driving License" bg=' #707b7c '/></Link>
+          <Link to='/services/personal/drivinglicense' className='service-link'><Card img='license.png' name="Driving License" bg=' #707b7c '/></Link>
+          <Card img='license.png' name="Aadhaar" bg=' #707b7c '/>
           {/* <Card img="" name="Laxmikanth"/>
           <Card img="" name="Laxmikanth"/>
           <Card img="" name="Laxmikanth"/> */}
@@ -84,9 +85,9 @@ function Services() {
           <Card img="" name="Scholorships" bg=" #2e86c1 "/>
           <Card img="" name="DOST(Degree)" bg=" #9c2bd1"/>
           <Card img="" name="TSWREIS" bg=" #85929e "/>
-          <Card img="" name="Mock Data" bg=" #20afbc"/>
-          <Card img="" name="Mock Data" />
-          <Card img="" name="Mock Data" />
+          <Card img="" name="Eduction Loan" bg=" #20afbc"/>
+          <Card img="" name="Overseas Scholorships"/>
+          <Card img="" name="JEE" />
 
       </section>
       </div>
@@ -107,16 +108,37 @@ function Services() {
   </Divider>
     <div id='socialwelfare'>
       <section className='category-parent'>
-          <Card img="" name="Mock Data" bg="#008080"/>
-          <Card img="" name="Mock Data" bg="#e74c3c"/>
-          <Card img="" name="Mock Data"/>
-          <Card img="" name="Mock Data" bg="#e74c3c"/>
-          <Card img="" name="Mock Data"/>
-          <Card img="" name="Mock Data" bg="#008080"/>
-          <Card img="" name="Mock Data"/>
-          <Card img="" name="Mock Data"/>
+          <Card img="" name="Driving License" bg="#008080"/>
+          <Card img="" name="Fitness Certificates" bg="#e74c3c"/>
+          <Card img="" name="Road Tax"/>
+          <Card img="" name="Pollution Certificate" bg="#e74c3c"/>
+          <Card img="" name="Permit Service"/>
       </section>
       </div>
+      </Root>
+
+
+      <Root>
+  <Divider>
+    <Chip
+     sx={{
+      fontWeight: 'bold', 
+      fontSize: '18px', 
+      padding: '20px 20px',
+      // marginTop:'20px'
+      margin:'20px 0px'
+    }}
+     label="Health & Medical Services" size="small" />
+  </Divider>
+    <div id='socialwelfare'>      
+    <section className='category-parent'>
+          <Card img="" name="Health Cards" bg="#008080"/>
+          <Card img="" name="Vaccination Certificate" bg="#e74c3c"/>
+          <Card img="" name=""/>
+          <Card img="" name=""/>
+      </section>
+      </div>
+
       </Root>
 
 
@@ -134,14 +156,39 @@ function Services() {
   </Divider>
     <div id='socialwelfare'>      
     <section className='category-parent'>
-          <Card img="" name="Mock Data" bg="#008080"/>
-          <Card img="" name="Mock Data" bg="#e74c3c"/>
-          <Card img="" name="Mock Data"/>
-          <Card img="" name="Mock Data"/>
-          <Card img="" name="Mock Data"/>
-          <Card img="" name="Mock Data"/>
-          <Card img="" name="Mock Data" bg='#de2057'/>
-          <Card img="" name="Mock Data" bg=" #20afbc"/>
+          <Card img="" name="Pension Services" bg="#008080"/>
+          <Card img="" name="Caste Certificate" bg="#e74c3c"/>
+          <Card img="" name="Shadi Mubharakh"/>
+          <Card img="" name="Kalyana laxmi"/>
+          <Card img="" name="Income Certificate"/>
+          <Card img="" name="Arogya Sree"/>
+          <Card img="" name="Labour Card"/>
+          <Card img="" name="Residence Certificate"/>
+          <Card img="" name="Labour Card"/>
+          <Card img="" name="Marriage Certificate"/>
+      </section>
+      </div>
+
+      </Root>
+
+      <Root>
+  <Divider>
+    <Chip
+     sx={{
+      fontWeight: 'bold', 
+      fontSize: '18px', 
+      padding: '20px 20px',
+      // marginTop:'20px'
+      margin:'20px 0px'
+    }}
+     label="Agriculture Services" size="small" />
+  </Divider>
+    <div id='socialwelfare'>      
+    <section className='category-parent'>
+          <Card img="" name="Crop Loans" bg="#008080"/>
+          <Card img="" name="Land Registration" bg="#e74c3c"/>
+          <Card img="" name="Passbook"/>
+          <Card img="" name="Encumbrance Certificate"/>
       </section>
       </div>
 

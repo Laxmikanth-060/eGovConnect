@@ -31,6 +31,7 @@
    color: white;
    white-space: nowrap;
    font-size: medium;
+   /* text-wrap: wrap; */
    padding: 4px;
 }
 .card-inner-container h6{

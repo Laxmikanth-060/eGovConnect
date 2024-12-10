@@ -22,6 +22,10 @@ const serviceSchema = new mongoose.Schema({
   //   type: String, 
   //   default: "", 
   // },
+  eligibility:{
+    type: String,
+    required: true, 
+  },
   documents: {
     type: String, 
     required:true,

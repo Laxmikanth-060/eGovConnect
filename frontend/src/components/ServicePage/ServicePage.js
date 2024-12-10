@@ -79,7 +79,7 @@ useEffect(() => {
         <Typography sx={{ width: '33%', flexShrink: 0 , ml: 2,p:1, fontWeight: 'bold'}}>
           Name
         </Typography>
-        <Typography sx={{ color: 'text.main',p:1 }}>{title}</Typography>
+        <Typography sx={{ color: 'text.main',p:1 }}>{title.toUpperCase()}</Typography>
       </AccordionSummary>
       <AccordionDetails>
         <Typography sx={{ p:1, ml: 2}}>

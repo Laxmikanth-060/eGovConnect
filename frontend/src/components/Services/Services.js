@@ -57,7 +57,7 @@ function Services() {
     <div id='education'>
       <section className='category-parent'>
           <Link to="/services/personal/birthcertificate" className='service-link'><Card img="" name="Birth Certificate" bg="#008080"/></Link>
-          <Link to='/services/personal/death' className='service-link'><Card img="" name="Death Certificate" bg="#e74c3c"/></Link>
+          <Link to='/services/personal/deathcertificate' className='service-link'><Card img="" name="Death Certificate" bg="#e74c3c"/></Link>
           <Link to='/services/personal/pancard' className='service-link'><Card img="" name="Pan Card" bg='#de2057'/></Link>
           <Link to='/services/personal/passport' className='service-link'><Card img="" name="Passport" bg=' #e67e22 '/></Link>
           <Link to='/services/personal/drivinglicense' className='service-link'><Card img="" name="Driving License" bg=' #707b7c '/></Link>

@@ -1,0 +1,43 @@
+
+.coverpage-services{
+    width: 100vw;
+    height: auto;
+    margin-bottom: 40px;
+}
+.titleSection{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-left: 5px;
+    color: rgb(128, 12, 143);
+}
+.title{
+    font-weight: bold;
+    padding: 15px;
+}
+.inputBar{
+    border: 0.7px solid black;
+    padding: 10px 0px 10px 20px;
+    font-weight: 600;
+    font-size: medium;
+    margin: 10px;
+    margin-right: 30px;
+    border-radius: 10px;
+    width: 400px;
+}
+
+.category-parent{
+    /* margin-top: 80px; */
+    margin-left: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.service-link{
+    text-decoration: none;
+}
+
+
+

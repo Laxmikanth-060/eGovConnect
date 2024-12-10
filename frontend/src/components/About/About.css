@@ -1,0 +1,33 @@
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffffff;
+    padding: 40px 0;
+}
+.feature-item {
+    text-align: center;
+    max-width: 200px;
+}
+.feature-item img {
+    width: 250px;
+    height: 200px;
+    margin-bottom: 15px;
+}
+
+.how-it-works {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+}
+.how-it-works .steps {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+.step {
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 150px;
+}

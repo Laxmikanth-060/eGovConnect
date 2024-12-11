@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import {Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Loader from './../../utils/Loader/Loader';
 import Alert from '@mui/material/Alert';
@@ -96,7 +96,7 @@ function Login() {
                     <button type="submit" className="login-button">Login</button>
                     <div className="login-footer">
                         <p><a href="/forget">Forgot Password?</a></p>
-                        <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+                        <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
                     </div>
                 </form>
             </div>

@@ -4,6 +4,7 @@ import axios from 'axios';
 import Loader from './../../utils/Loader/Loader';
 import Alert from '@mui/material/Alert';
 import { UserContext } from '../../context/UserContext';
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import './Login.css';
 
 function Login() {
@@ -59,6 +60,12 @@ function Login() {
 
     return (
         <div className="login-container">
+                <button
+      className="back-button"
+      onClick={() => navigate(-1)} // Navigate back to the previous page
+    >
+      <ArrowBackIcon />
+    </button>
             <div className="login-box">
                 <h2>Welcome to eGovConnect</h2>
                 {loader && <Loader />}

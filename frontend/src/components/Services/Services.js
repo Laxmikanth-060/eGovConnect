@@ -61,10 +61,6 @@ function Services() {
           <Link to='/services/personal/pancard' className='service-link'><Card img="" name="Pan Card" bg='#de2057'/></Link>
           <Link to='/services/personal/passport' className='service-link'><Card img="" name="Passport" bg=' #e67e22 '/></Link>
           <Link to='/services/personal/drivinglicense' className='service-link'><Card img='license.png' name="Driving License" bg=' #707b7c '/></Link>
-          <Card img='license.png' name="Aadhaar" bg=' #707b7c '/>
-          {/* <Card img="" name="Laxmikanth"/>
-          <Card img="" name="Laxmikanth"/>
-          <Card img="" name="Laxmikanth"/> */}
       </section> 
       </div>
       </Root>
@@ -82,12 +78,12 @@ function Services() {
   
       <div id='road-transport'>
       <section className='category-parent'>
-          <Card img="" name="Scholorships" bg=" #2e86c1 "/>
-          <Card img="" name="DOST(Degree)" bg=" #9c2bd1"/>
-          <Card img="" name="TSWREIS" bg=" #85929e "/>
-          <Card img="" name="Eduction Loan" bg=" #20afbc"/>
-          <Card img="" name="Overseas Scholorships"/>
-          <Card img="" name="JEE" />
+          <Link to="/services/education/birthcertificate" className='service-link'><Card img="" name="Scholorships" bg=" #2e86c1 "/></Link>
+          <Link to="/services/education/birthcertificate" className='service-link'><Card img="/educational/degree.png" name="DOST(Degree)" bg=" #9c2bd1"/></Link>
+          <Link to="/services/education/birthcertificate" className='service-link'><Card img="/educational/school.png" name="TSWREIS" bg=" #85929e "/></Link>
+          <Link to="/services/education/birthcertificate" className='service-link'><Card img="/educational/educationloan.png" name="Eduction Loan" bg=" #20afbc"/></Link>
+          <Link to="/services/education/birthcertificate" className='service-link'><Card img="/educational/oversea.png" name="Overseas Scholorships"/></Link>
+          <Link to="/services/education/birthcertificate" className='service-link'><Card img="" name="JEE" bg=" #16a085 " /></Link>
 
       </section>
       </div>
@@ -108,11 +104,11 @@ function Services() {
   </Divider>
     <div id='socialwelfare'>
       <section className='category-parent'>
-          <Card img="" name="Driving License" bg="#008080"/>
-          <Card img="" name="Fitness Certificates" bg="#e74c3c"/>
-          <Card img="" name="Road Tax"/>
-          <Card img="" name="Pollution Certificate" bg="#e74c3c"/>
-          <Card img="" name="Permit Service"/>
+          <Link to="/services/road-transport/birthcertificate" className='service-link'><Card img="/road-transport/card.png" name="Driving License" bg="#008080"/></Link>
+          <Link to="/services/road-transport/birthcertificate" className='service-link'><Card img="/road-transport/license.png" name="Fitness Certificates" bg="#e74c3c"/></Link>
+          <Link to="/services/road-transport/birthcertificate" className='service-link'><Card img="/road-transport/vehicletax.png" name="Road Tax" bg=" #d520b9 "/></Link>
+          <Link to="/services/road-transport/birthcertificate" className='service-link'><Card img="/road-transport/roadpollution.png" name="Pollution Certificate" bg="##28a1f2"/></Link>
+          <Link to="/services/road-transport/birthcertificate" className='service-link'><Card img="" name="Permit Service" bg=" #839192 "/></Link>
       </section>
       </div>
       </Root>
@@ -156,16 +152,16 @@ function Services() {
   </Divider>
     <div id='socialwelfare'>      
     <section className='category-parent'>
-          <Card img="" name="Pension Services" bg="#008080"/>
-          <Card img="" name="Caste Certificate" bg="#e74c3c"/>
-          <Card img="" name="Shadi Mubharakh"/>
-          <Card img="" name="Kalyana laxmi"/>
-          <Card img="" name="Income Certificate"/>
-          <Card img="" name="Arogya Sree"/>
-          <Card img="" name="Labour Card"/>
-          <Card img="" name="Residence Certificate"/>
-          <Card img="" name="Labour Card"/>
-          <Card img="" name="Marriage Certificate"/>
+          <Link to="/services/welfare/birthcertificate" className='service-link'><Card img="/welfare/pension.png" name="Pension Services" bg="#008080"/></Link>
+          <Link to="/services/welfare/birthcertificate" className='service-link'></Link><Card img="/welfare/" name="Caste Certificate" bg="#e74c3c"/>
+          <Link to="/services/welfare/birthcertificate" className='service-link'></Link><Card img="/welfare/" name="Shadi Mubharakh"/>
+          <Link to="/services/welfare/" className='service-link'><Card img="/welfare/kalyana.png" name="Kalyana laxmi"/></Link>
+          <Link to="/services/welfare/" className='service-link'><Card img="" name="Income Certificate"/></Link>
+          <Link to="/services/welfare/" className='service-link'><Card img="" name="Arogya Sree"/></Link>
+          <Link to="/services/welfare/" className='service-link'><Card img="" name="Labour Card"/></Link>
+          <Link to="/services/welfare/" className='service-link'><Card img="" name="Residence Certificate"/></Link>
+          <Link to="/services/welfare/" className='service-link'><Card img="" name="Labour Card"/></Link>
+          <Link to="/services/welfare/" className='service-link'><Card img="" name="Marriage Certificate"/></Link>
       </section>
       </div>
 

@@ -1,0 +1,13 @@
+.userProfileImg-container {
+    width: 100vw;
+    height: 15vh;
+    overflow: hidden; 
+    position: relative;
+}
+
+.userProfile-img {
+    width: 100%; 
+    height: auto; 
+    background-color: rgb(25, 25, 201);
+    position: absolute;
+}

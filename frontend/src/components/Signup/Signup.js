@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { useState} from 'react';
-import {Link,useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import Button from '@mui/material/Button';
 import axios from 'axios';
 import './Signup.css'
@@ -8,6 +8,7 @@ import Alert from '@mui/material/Alert';
 import Loader from './../../utils/Loader/Loader'
 import {UserContext} from '../../context/UserContext'
 import {TextField } from "@mui/material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 function Signup() {
 
@@ -42,7 +43,7 @@ function Signup() {
     e.preventDefault();
    
     const { username, fullname, email, mobile, password, confirmPassword } = formData;
-    console.log(username);
+    console.log(formData);
     const pattern = /^[0-9]{10}$/;
 
     if(!pattern.test(mobile)){
@@ -97,22 +98,14 @@ function Signup() {
     
   };
 
-
-//   iv className="form-group">
-//   <label htmlFor="username">User Name</label>
-//   <input
-//     type="text"
-//     id="username"
-//     name="username"
-//     placeholder="Enter User name"
-//     value={formData.username}
-//     onChange={handleChange}
-//     required
-//   />
-// </div>
-
   return (
     <div className="signup-parent-container">
+       <button
+      className="back-button"
+      onClick={() => navigate(-1)} // Navigate back to the previous page
+    >
+      <ArrowBackIcon />
+    </button>
       <div className='signup-text-container'>
 
       <h2 className='signup-title'>Signup</h2>
@@ -200,12 +193,12 @@ function Signup() {
        value={formData.confirmPassword}
        onChange={handleChange}
        required
-       label="confirmpassword" variant="outlined"
+       label="confirm password" variant="outlined"
        sx={{ width: "250px" }}
       /></div>
 
 
-<Button variant="contained" style={{ margin: '25px',padding:'8px 40px' }}>Signup</Button>
+<Button type="submit" variant="contained" style={{ margin: '25px',padding:'8px 40px' }}>Signup</Button>
     </form>
 
       </div>

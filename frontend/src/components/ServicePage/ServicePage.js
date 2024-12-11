@@ -3,13 +3,13 @@ import axios from 'axios'
 import './ServicePage.css'
 import { Link, useParams,useNavigate } from 'react-router-dom'
 import Checkbox from '@mui/material/Checkbox';
-
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Button from '@mui/material/Button';
+import Loader from './../../utils/Loader/Loader'
 
 function ServicePage() {
 
@@ -25,6 +25,7 @@ const [time,setTime]=useState("-");
 const [fee,setFee]=useState("-");
 const [reference,setReference]=useState("");
 const [eligibility,setEligibility]=useState("");
+const [loading,setLoading]=useState(true);
 
 const url = process.env.REACT_APP_BACKEND_URL;
 
@@ -41,6 +42,7 @@ useEffect(() => {
       setFee(response.data.service.fee);
       setReference(response.data.service.reference);
       setEligibility(response.data.service.eligibility);
+      setLoading(false);
 
     } catch (err) {
       alert("Currently this service is not available.");
@@ -63,6 +65,7 @@ useEffect(() => {
     <div className='sp-root-container'>
 
       <h3 id='sp-title'>{name.toUpperCase()}</h3>
+      {loading && <Loader></Loader>}
 
     <div className='sp-parent-container'>
 
@@ -143,7 +146,7 @@ useEffect(() => {
     </Accordion>
 
 
-    <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}
+    <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}
     sx={{
       backgroundColor: 'rgba(255, 255, 255, 0.5)', 
       boxShadow: 'none', 
@@ -171,7 +174,7 @@ useEffect(() => {
 
 
     
-    <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}
+    <Accordion expanded={expanded === 'panel5'} onChange={handleChange('panel5')}
     sx={{
       backgroundColor: 'rgba(255, 255, 255, 0.5)', 
       boxShadow: 'none', 
@@ -198,7 +201,7 @@ useEffect(() => {
     </Accordion>
 
 
-    <Accordion expanded={expanded === 'panel5'} onChange={handleChange('panel5')}
+    <Accordion expanded={expanded === 'panel6'} onChange={handleChange('panel6')}
     sx={{
       backgroundColor: 'rgba(255, 255, 255, 0.5)', 
       boxShadow: 'none', 
@@ -225,7 +228,7 @@ useEffect(() => {
     </Accordion>
 
 
-    <Accordion expanded={expanded === 'panel6'} onChange={handleChange('panel6')}
+    <Accordion expanded={expanded === 'panel7'} onChange={handleChange('panel7')}
     sx={{
       backgroundColor: 'rgba(255, 255, 255, 0.5)', 
       boxShadow: 'none', 
@@ -251,7 +254,7 @@ useEffect(() => {
       </AccordionDetails>
     </Accordion>
 
-    <Accordion expanded={expanded === 'panel7'} onChange={handleChange('panel7')}
+    <Accordion expanded={expanded === 'panel8'} onChange={handleChange('panel8')}
     sx={{
       backgroundColor: 'rgba(255, 255, 255, 0.5)', 
       boxShadow: 'none', 
@@ -278,7 +281,7 @@ useEffect(() => {
     </Accordion>
 
 
-    <Accordion expanded={expanded === 'panel8'} onChange={handleChange('panel8')}
+    <Accordion expanded={expanded === 'panel0'} onChange={handleChange('panel9')}
     sx={{
       backgroundColor: 'rgba(255, 255, 255, 0.5)', 
       boxShadow: 'none', 

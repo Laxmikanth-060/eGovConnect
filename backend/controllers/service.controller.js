@@ -2,7 +2,7 @@ import Service from "../models/Services.js";
 
 export const getService = async(req,res) => {
     const {name}=req.params;
-    
+    console.log(name);
     const title = name.toLowerCase();
 
     const service = await Service.findOne({ name:title });

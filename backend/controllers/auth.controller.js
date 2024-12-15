@@ -13,14 +13,14 @@ export const signup = async (req, res) => {
         return res.status(400).json({ error: "Invalid email" });
       }
   
-      // const existingUser = await Customer.findOne({ username });
-      // if (existingUser) {
-      //   return res.status(400).json({ error: "Username already taken" });
-      // }
-      // const existingEmail = await Customer.findOne({ email });
-      // if (existingEmail) {
-      //   return res.status(400).json({ error: "Email already taken" });
-      // }
+      const existingUser = await Customer.findOne({ username });
+      if (existingUser) {
+        return res.status(400).json({ error: "Username already taken" });
+      }
+      const existingEmail = await Customer.findOne({ email });
+      if (existingEmail) {
+        return res.status(400).json({ error: "Email already taken" });
+      }
   
   
       const salt = await bcrypt.genSalt(10);
@@ -51,6 +51,7 @@ export const signup = async (req, res) => {
             _id:newCustomer._id,
             fullnamename:newCustomer.fullname,
             email:newCustomer.email,
+            mobile:newCustomer.mobile,
             username:newCustomer.username,
             profileImg:newCustomer.profileImg,
         })
@@ -106,7 +107,8 @@ export const login = async (req, res) => {
   
       res.status(201).json({
         _id: user._id,
-        fullName: user.fullName,
+        fullname: user.fullname,
+        mobile:user.mobile,
         email: user.email,
         username: user.username,
         profileImg: user.profileImg,

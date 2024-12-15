@@ -14,6 +14,7 @@ import Post from "./components/Post/Post";
 import NotFound from "./utils/NotFound/NotFound";
 import Profile from './components/Profile/Profile'
 import { UserProvider } from "./context/UserContext";
+import ApplicationPage from "./components/ApplicationPage/ApplicationPage";
 
 
 const appRouter = createBrowserRouter([
@@ -36,6 +37,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/services/:category/:name",
         element: <ServicePage/>,
+      },
+      {
+        path: "/services/:category/:name/apply",
+        element: <ApplicationPage/>,
       },
       {
         path: "/digital-seva",

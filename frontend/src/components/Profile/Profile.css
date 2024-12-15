@@ -1,13 +1,97 @@
-.userProfileImg-container {
+.user-profile-parent-container{
     width: 100vw;
-    height: 15vh;
-    overflow: hidden; 
-    position: relative;
 }
 
-.userProfile-img {
-    width: 100%; 
-    height: auto; 
-    background-color: rgb(25, 25, 201);
-    position: absolute;
+.userProfileImg-container {
+    width: 100%;
+    height: 40vh;
+    overflow: hidden; 
+    background-color: rgb(193, 193, 231);
+}
+
+
+.user-profileInfo-container{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.user-profileInfo-inner-container{
+    display: flex;
+    align-items: stretch;
+    margin: 1.5em 1.5em;
+    width: 75%;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.user-profile-data{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 75%;
+}
+
+.user-profileInfo-update-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 25%;
+}
+
+.user-profile-social-icons a {
+    margin-right: 10px;
+    display: inline-block;
+    transition: opacity 0.3s;
+}
+
+.user-profile-social-icons a img{
+    width: 30px;
+    height: 30px;
+}
+
+.user-profile-data h2{
+    margin: 0;
+    font-weight: 400;
+    font-size: x-large;
+}
+
+.profile-documents-parent-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-documents-container{
+    width: 98vw;
+    height: 60vh;
+    margin: 30px 30px;
+    background-color: rgb(150, 230, 203);
+}
+
+.profile-files-parent-container{
+    width: 98vw;
+    height: auto;
+    margin: 20px 15px ;
+    padding: 20px 30px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    background-color: rgb(233, 226, 240);
+    /* display: flex;
+    justify-content: center;
+    flex-wrap: wrap; */
+}
+
+.profile-files-img-container{
+    margin: 20px 25px;
+    padding: 5px;
+}
+
+.profile-upload-button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -16,7 +16,6 @@ function Signup() {
 
   const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
-  
   const [showAlert,setAlert]=useState(false);
   const [error,setError]=useState("");
   const [loading,setLoading]=useState(false);
@@ -90,6 +89,7 @@ function Signup() {
       if(error.response)
       {
         setError(error.response.data.error);
+        setAlert(true);
       }else{
         setError("An unexpected error occured.");
       }

@@ -13,7 +13,7 @@ import Loader from './../../utils/Loader/Loader'
 
 function ServicePage() {
 
-  const {name}=useParams();
+  const {category,name}=useParams();
   const navigate = useNavigate();
 
 const [title,setTitle]=useState("-");
@@ -296,7 +296,7 @@ useEffect(() => {
           Reference / Resource (website)
         </Typography>
         <Typography sx={{ color: 'text.main' ,p:1}}>
-         <Link to={`${reference}`} > {reference} </Link>
+         <Link to={`${reference}`} target="_blank" > {reference} </Link>
         </Typography>
       </AccordionSummary>
       <AccordionDetails>
@@ -312,7 +312,7 @@ useEffect(() => {
     <Checkbox defaultChecked />
     <p>"Choose to apply services on this portal if <b>NO HARDCOPY SINGATURE / PHYSICAL APPEARANCE</b> is needed."</p></div>
     <div className='sp-button-parent'>
-    <Button variant="contained">Apply Now</Button>  
+    <Link to={`/services/${category}/${name}/apply`} ><Button variant="contained">Apply Now</Button></Link>
     </div>
 
   </div>

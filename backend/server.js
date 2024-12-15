@@ -4,6 +4,7 @@ import cors from "cors";
 import connectMongoDB from "./db/connectMongoDB.js";
 import authRoutes from "./routes/auth.routes.js";
 import serviceRoutes from "./routes/service.routes.js"
+import fileRoutes from "./routes/file.routes.js"
 import cookieParser from "cookie-parser";
 
 
@@ -36,6 +37,7 @@ app.use(
 
   app.use("/api/auth", authRoutes);
   app.use("/services",serviceRoutes);
+  app.use("/api/file",fileRoutes);
 
 
 app.listen(PORT, () => {

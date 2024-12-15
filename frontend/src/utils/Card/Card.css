@@ -51,3 +51,6 @@
     border: none;
     border-radius: 5px;
 }
+.card-inner-container button:hover{
+    cursor: pointer;
+}

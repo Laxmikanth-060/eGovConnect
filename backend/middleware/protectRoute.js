@@ -1,4 +1,4 @@
-import Customer from '../models/Customers.js';
+import User from '../models/User.js';
 import jwt from 'jsonwebtoken';
 
 export const protectRoute = async (req, res, next) => {
@@ -17,7 +17,7 @@ export const protectRoute = async (req, res, next) => {
             return res.status(401).json({ error: "Unauthorized: Invalid or expired token" });
         }
 
-        const user = await Customer.findById(decode.userId).select("-password");
+        const user = await User.findById(decode.userId).select("-password");
         if (!user) {
             return res.status(401).json({ error: "User not found" });
         }

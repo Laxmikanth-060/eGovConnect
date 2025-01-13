@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './Profile.css';
+import { Link } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import { UserContext } from './../../context/UserContext';
 import Loader from "../../utils/Loader/Loader";
@@ -21,7 +22,6 @@ function Profile() {
 
   const handleFileUpload = async (event) => {
     const file = event.target.files[0]; 
-    console.log(file);
     if (!file) return; 
 
     const formData = new FormData();
@@ -55,12 +55,14 @@ function Profile() {
     } catch (error) {
         console.error('Error fetching files:', error);
         setLoadingFiles(false); 
+    }finally{
+      setLoadingFiles(false)
     }
   };
 
   useEffect(() => {
     fetchFiles(); 
-  }); 
+  },[user,loadingFiles]); 
 
   if (!user) {
     return (<Loader />);
@@ -76,7 +78,7 @@ function Profile() {
       {!user && <Loader/>}
       <div className="userProfileImg-container">
         <img 
-          src="profile_bg.png" 
+          src={user.coverImg ? user.coverImg : "profile_bg.png"} 
           alt="profile_cover_page"  
           className="userProfileImg-container"
         />
@@ -101,23 +103,24 @@ function Profile() {
             <h2>{user.username}</h2>
             <h2>{user.email}</h2>
             <h2>{user.mobile}</h2>
+            <h2>{user.address}</h2>
           </div>
           <div className="user-profileInfo-update-container">
             <div className="user-profile-social-icons">
-              <a href="https://facebook.com" target='_blank' rel="noopener noreferrer"><img src="facebook.png" alt="Facebook" /></a>
-              <a href="https://twitter.com" target='_blank' rel="noopener noreferrer"><img src="twitter.png" alt="Twitter" /></a>
-              <a href="https://linkedin.com" target='_blank' rel="noopener noreferrer"><img src="linkedin.png" alt="LinkedIn" /></a>
+              <a href={user.facebook} target='_blank' rel="noopener noreferrer"><img src="facebook.png" alt="Facebook" /></a>
+              <a href={user.twitter} target='_blank' rel="noopener noreferrer"><img src="twitter.png" alt="Twitter" /></a>
+              <a href={user.linkedin} target='_blank' rel="noopener noreferrer"><img src="linkedin.png" alt="LinkedIn" /></a>
             </div>
-            <Button 
+            <Link to="/profile/update"><Button 
               variant="contained" 
               size="small"
               sx={{
-                width: 80,    
+                width: 130,    
                 height: 28,   
               }}
             >
-              Update 
-            </Button>
+              Edit Profile 
+            </Button></Link>
           </div>
         </div>
       </div>
@@ -216,8 +219,8 @@ function Profile() {
           justifyContent: 'center',
           alignItems: 'center',
           width:'70%',
-          marginTop: '70px', // Top margin
-          marginBottom: '20px', // Bottom margin
+          marginTop: '70px', 
+          marginBottom: '20px', 
         }}
         >
         {uploading ? 'Uploading...' : 'Upload files'}

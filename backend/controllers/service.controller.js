@@ -42,7 +42,6 @@ export const addService = async(req,res) => {
 
     if(newService){
         await newService.save();
-
         return res
         .status(201)
         .json({

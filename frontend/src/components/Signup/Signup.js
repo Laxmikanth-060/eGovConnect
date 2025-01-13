@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { useState} from 'react';
-import {useNavigate} from 'react-router-dom'
+import {useNavigate,Link} from 'react-router-dom'
 import Button from '@mui/material/Button';
 import axios from 'axios';
 import './Signup.css'
@@ -69,7 +69,7 @@ function Signup() {
     try{
       setAlert(false);
       setLoading(true);
-      const user= await axios.post(`${url}/api/auth/signup`,{
+      const user= await axios.post(`${url}/api/auth/user/signup`,{
         username,
         fullname,
         email,
@@ -78,9 +78,9 @@ function Signup() {
       }, { withCredentials: true });
 
 
-      // const { userData } = await axios.get(`${url}/api/auth/authCheck`,{
-      //   withCredentials:true,
-      // });
+      const { userData } = await axios.get(`${url}/api/auth/user/authCheck`,{
+        withCredentials:true,
+      });
 
       setUser(user);
       navigate("/");
@@ -101,108 +101,161 @@ function Signup() {
   return (
     <div className="signup-parent-container">
        <button
-      className="back-button"
-      onClick={() => navigate(-1)} // Navigate back to the previous page
-    >
-      <ArrowBackIcon />
-    </button>
-      <div className='signup-text-container'>
+            className="back-button"
+            onClick={() => navigate(-1)} // Navigate back to the previous page
+            >
+            <ArrowBackIcon />
+        </button>
+        <h2 className='signup-title'>Signup</h2>
+            {showAlert && <Alert severity="error"
+          sx={{
+            width: '50%',        
+            margin: '0 auto',   
+            textAlign: 'center',  
+          }}
+            >{error}</Alert>}
+            {loading && <Loader/>}
 
-      <h2 className='signup-title'>Signup</h2>
-      {showAlert && <Alert severity="error"
-     sx={{
-      width: '50%',        
-      margin: '0 auto',   
-      textAlign: 'center',  
-    }}
-      >{error}</Alert>}
-      {loading && <Loader/>}
-    <form onSubmit={handleSubmit} className='signup-form'>
+        <div className='signup-text-container'>
+            <form onSubmit={handleSubmit} className='signup-form'>
 
-       <div className='post-main-container'>
-        <p>Fullname </p>
-        <TextField 
-       type="text"
-       placeholder="Fullname"
-       name="fullname"
-       value={formData.fullname}
-       onChange={handleChange}
-       required
-       label="fullname" variant="outlined"
-       sx={{ width: "250px" }}
-      /></div>
+              <div className='signup-section-container'>
+                      <p>Fullname </p>
+                      <TextField 
+                      type="text"
+                      placeholder="Fullname"
+                      name="fullname"
+                      value={formData.fullname}
+                      onChange={handleChange}
+                      required
+                      label="fullname" variant="outlined"
+                      size="small"
+                      InputProps={{
+                        sx: {
+                          width: "250px", 
+                          height: "46px", 
+                          padding: "0",   
+                        },
+                      }}/>
+                    </div>
 
-<div className='post-main-container'>
-        <p>Email</p>
-        <TextField 
-       type="email"
-       placeholder="Email"
-       name="email"
-       value={formData.email}
-       onChange={handleChange}
-       required
-       label="email" variant="outlined"
-       sx={{ width: "250px" }}
-      /></div>
+                  <div className='signup-section-container'>
+                      <p>Email</p>
+                      <TextField 
+                      type="email"
+                      placeholder="Email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      label="email" variant="outlined"
+                      size="small"
+                      InputProps={{
+                        sx: {
+                          width: "250px", 
+                          height: "46px", 
+                          padding: "0",   
+                        },
+                      }}/>
+                    </div>
 
-<div className='post-main-container'>
-        <p>Mobile</p>
-        <TextField 
-       type="text"
-       placeholder="Mobile No."
-       name="mobile"
-       value={formData.mobile}
-       onChange={handleChange}
-       required
-       label="mobile" variant="outlined"
-       sx={{ width: "250px" }}
-      /></div>
+                  <div className='signup-section-container'>
+                      <p>Mobile</p>
+                      <TextField 
+                      type="text"
+                      placeholder="Mobile No."
+                      name="mobile"
+                      value={formData.mobile}
+                      onChange={handleChange}
+                      required
+                      label="mobile" variant="outlined"
+                      size="small"
+                      InputProps={{
+                        sx: {
+                          width: "250px", 
+                          height: "46px", 
+                          padding: "0",   
+                        },
+                      }}/>
+                  </div>
 
-<div className='post-main-container'>
-        <p>Username </p>
-        <TextField 
-       type="text"
-       placeholder="Username"
-       name="username"
-       value={formData.username}
-       onChange={handleChange}
-       required
-       label="username" variant="outlined"
-       sx={{ width: "250px" }}
-      /></div>
- 
- <div className='post-main-container'>
-        <p>Password </p>
-        <TextField 
-       type="password"
-       placeholder="Password"
-       name="password"
-       value={formData.password}
-       onChange={handleChange}
-       required
-       label="password" variant="outlined"
-       sx={{ width: "250px" }}
-      /></div>
+                  <div className='signup-section-container'>
+                          <p>Username </p>
+                          <TextField 
+                        type="text"
+                        placeholder="Username"
+                        name="username"
+                        value={formData.username}
+                        onChange={handleChange}
+                        required
+                        label="username" variant="outlined"
+                        size="small"
+                        InputProps={{
+                          sx: {
+                            width: "250px", 
+                            height: "46px", 
+                            padding: "0",   
+                          },
+                        }}/>
+                      </div>
+        
+                      <div className='signup-section-container'>
+                              <p>Password </p>
+                              <TextField 
+                            type="password"
+                            placeholder="Password"
+                            name="password"
+                            value={formData.password}
+                            onChange={handleChange}
+                            required
+                            label="password" variant="outlined"
+                            size="small"
+                            InputProps={{
+                              sx: {
+                                width: "250px", 
+                                height: "46px", 
+                                padding: "0",   
+                              },
+                            }}/>
+                            </div>
 
-<div className='post-main-container'>
-        <p>Confirm Password </p>
-        <TextField 
-       type="password"
-       placeholder="confirmpassword"
-       name="confirmPassword"
-       value={formData.confirmPassword}
-       onChange={handleChange}
-       required
-       label="confirm password" variant="outlined"
-       sx={{ width: "250px" }}
-      /></div>
+                        <div className='signup-section-container'>
+                                <p>Confirm Password </p>
+                                <TextField 
+                              type="password"
+                              placeholder="confirmpassword"
+                              name="confirmPassword"
+                              value={formData.confirmPassword}
+                              onChange={handleChange}
+                              required
+                              label="confirm password" variant="outlined"
+                              size="small"
+                              InputProps={{
+                                sx: {
+                                  width: "250px", 
+                                  height: "46px", 
+                                  padding: "5px",   
+                                },
+                              }}/>
+                            </div>
 
 
-<Button type="submit" variant="contained" style={{ margin: '25px',padding:'8px 40px' }}>Signup</Button>
-    </form>
-
-      </div>
-      {/* <img className='sinupImg' src='signup.png'></img> */}
+                            <div className='signup-button-container'>
+                            <Button 
+                            sx={{
+                              height: '37px',
+                              // fontSize: '12px',
+                              padding: '12px 25px',
+                            }}
+                            type='submit' variant="contained" >SignUp</Button>
+                            <Link to="/login"><Button variant="outlined">Login</Button></Link>
+                            </div>
+                  </form>
+              <div className='signup-img-div' >    
+                  <img className='signupImg' src='signup.png'></img>
+              </div>
+          </div>
+      
     </div>
   ) 
 }

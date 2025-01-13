@@ -15,6 +15,11 @@ import NotFound from "./utils/NotFound/NotFound";
 import Profile from './components/Profile/Profile'
 import { UserProvider } from "./context/UserContext";
 import ApplicationPage from "./components/ApplicationPage/ApplicationPage";
+import UpdateProfile from "./components/UpdateProfile/UpdateProfile";
+import {
+  ProtectedRoute,
+  SuperAdminRoute,
+} from "./ProtectedRoutes/ProtectedRoutes.js";
 
 
 const appRouter = createBrowserRouter([
@@ -52,7 +57,15 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <Profile/>,
+        element:(
+          <ProtectedRoute>
+            <Profile/>
+          </ProtectedRoute>
+        )
+      },
+      {
+        path: "/profile/update",
+        element: <UpdateProfile/>,
       },
       {
         path:"*",

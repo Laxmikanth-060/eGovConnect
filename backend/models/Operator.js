@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const customerSchema = new mongoose.Schema({
+const operatorSchema = new mongoose.Schema({
     username:{
         type:String,
         required:true,
@@ -17,7 +17,6 @@ const customerSchema = new mongoose.Schema({
     mobile:{
         type:Number,
         requrired:true,
-        // unique: true, 
     },
     password:{
         type:String,
@@ -27,7 +26,22 @@ const customerSchema = new mongoose.Schema({
         type:String,
         default:"https://cdn-icons-png.flaticon.com/512/1053/1053244.png",
     },
+    coverImg:{
+        type:String,
+    },
+    address:{
+        type:String,
+    },
+    twitterURL:{
+        type:String,
+    },
+    facebookURL:{
+        type:String,
+    },
+    linkedinURL:{
+        type:String,
+    }
 })
 
-const Customer = mongoose.model('Customer',customerSchema);
- export  default Customer;
+const Operator = mongoose.model('Operator',operatorSchema);
+ export  default Operator;

@@ -10,7 +10,5 @@ const router = express.Router();
 // router.get("/authCheck",protectRoute,authCheck);
 router.post("/upload",upload.single('file'), fileUpload);
 router.get("/:userId/getfiles",getFiles);
-// router.post("/emailresend",emailresend);
-// router.get("/users/:id/verify/:token",emailVerification);
 
 export default router;

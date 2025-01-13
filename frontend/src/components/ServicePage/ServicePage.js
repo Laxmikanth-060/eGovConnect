@@ -52,7 +52,7 @@ useEffect(() => {
 
   fetchServiceData();
 
-});
+},[]);
 
   const [expanded, setExpanded] = React.useState(false);
 

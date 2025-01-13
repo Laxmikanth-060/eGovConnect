@@ -5,9 +5,11 @@ import Loader from './../../utils/Loader/Loader';
 import Alert from '@mui/material/Alert';
 import { UserContext } from '../../context/UserContext';
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import Button from '@mui/material/Button';
 import './Login.css';
 
 function Login() {
+    
     const [formData, setFormData] = useState({
         username: '',
         password: '',
@@ -35,12 +37,11 @@ function Login() {
         try {
             setLoader(true);
             const { data } = await axios.post(
-                `${url}/api/auth/login`,
+                `${url}/api/auth/user/login`,
                 { username, password },
                 { withCredentials: true }
             );
-            
-            console.log(data);  
+ 
             setUser(data);  
             
            
@@ -61,16 +62,18 @@ function Login() {
     return (
         <div className="login-container">
                 <button
-      className="back-button"
-      onClick={() => navigate(-1)} // Navigate back to the previous page
-    >
-      <ArrowBackIcon />
-    </button>
+                className="back-button"
+                onClick={() => navigate(-1)} 
+                >
+                <ArrowBackIcon />
+                </button>
+
             <div className="login-box">
-                <h2>Welcome to eGovConnect</h2>
+            <h2>Welcome to eGovConnect</h2>
                 {loader && <Loader />}
                 {error && <Alert severity="error">{error}</Alert>}
-                <form onSubmit={handleSubmit}>
+            <div className='login-main-container'>
+                <form className='login-form' onSubmit={handleSubmit}>
                     <div className="input-group">
                         <label>Username</label>
                         <input 
@@ -79,6 +82,7 @@ function Login() {
                             name="username" 
                             value={formData.username}
                             onChange={handleChange}
+                            // placeholder='username'
                             required
                         />
                     </div>
@@ -90,15 +94,25 @@ function Login() {
                             name="password" 
                             value={formData.password}
                             onChange={handleChange}
+                            // placeholder='password'
                             required
                         />
                     </div>
-                    <button type="submit" className="login-button">Login</button>
-                    <div className="login-footer">
+                   <div className='login-button-container'>
+                    <Button 
+                    variant="contained" 
+                    type="submit" 
+                    style={{ padding: '0px 35px' }}>Login</Button>
+                    <Link to="/signup"><Button variant="outlined">Register</Button></Link>
+                    </div>
+                    {/* <div className="login-footer">
                         <p><a href="/forget">Forgot Password?</a></p>
                         <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
-                    </div>
+                    </div> */}
                 </form>
+
+                    <img className='login-bg-img' src='login_bg.png' />
+                </div>
             </div>
         </div>
     );

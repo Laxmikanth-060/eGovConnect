@@ -16,10 +16,10 @@ import Profile from './components/Profile/Profile'
 import { UserProvider } from "./context/UserContext";
 import ApplicationPage from "./components/ApplicationPage/ApplicationPage";
 import UpdateProfile from "./components/UpdateProfile/UpdateProfile";
-import {
-  ProtectedRoute,
-  SuperAdminRoute,
-} from "./ProtectedRoutes/ProtectedRoutes.js";
+// import {
+//   ProtectedRoute,
+//   SuperAdminRoute,
+// } from "./ProtectedRoutes/ProtectedRoutes.js";
 
 
 const appRouter = createBrowserRouter([
@@ -58,9 +58,9 @@ const appRouter = createBrowserRouter([
       {
         path: "/profile",
         element:(
-          <ProtectedRoute>
+          // <ProtectedRoute>
             <Profile/>
-          </ProtectedRoute>
+          // </ProtectedRoute>
         )
       },
       {

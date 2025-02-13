@@ -32,16 +32,15 @@ const userSchema = new mongoose.Schema({
     address:{
         type:String,
     },
-    twitterURL:{
-        type:String,
+    customerId:{
+        type:mongoose.Schema.Types.ObjectId,
+        default:null,
     },
-    facebookURL:{
-        type:String,
-    },
-    linkedinURL:{
-        type:String,
+    operatorId:{
+        type:mongoose.Schema.Types.ObjectId,
+        default:null,
     }
-})
+},{timestamps:true});
 
 const User = mongoose.model('User',userSchema);
  export  default User;

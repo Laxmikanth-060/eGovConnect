@@ -196,32 +196,30 @@ function UpdateProfile() {
             sx={{ width: "350px" }}
             label="LinkedIn Link" variant="outlined" /></div>
 
-{/* <div className='post-main-container'> */}
-            <p>Profile</p>
-            <Button
-          component="label"
-          variant="contained"
-          startIcon={<CloudUploadIcon />}
-          disabled={uploading}
-          sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          width:'10%',
-          marginTop: '70px', 
-          marginBottom: '20px', 
-        }}
-        >
-        {uploading}
+        <div className='profile-upload-button'>
+                  <Button
+                  component="label"
+                  variant="contained"
+                  startIcon={<CloudUploadIcon />}
+                  disabled={uploading}
+                  sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  width:'70%',
+                  marginTop: '70px', 
+                  marginBottom: '20px', 
+                }}
+                >
+                {uploading ? 'Uploading...' : 'Upload files'}
 
-            <input
-              type="file"
-              style={{ display: 'none' }}
-              onChange={submitProfileImg}
-            />
-          </Button>
-        {/* </div> */}
-
+                <input
+                  type="file"
+                  style={{ display: 'none' }}
+                  onChange={submitProfileImg}
+                />
+              </Button>
+              </div>
 
         {/* <div className='post-main-container'> */}
             <p>Cover</p>

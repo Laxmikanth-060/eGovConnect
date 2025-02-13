@@ -139,7 +139,7 @@ export const logout = async (req, res) => {
 export const updateProfile = async (req,res) =>{
   try {
     const { userId, fullname, username, mobile, email, address, facebook, linkedin, twitter } = req.body;
-    console.log("entered");
+    console.log(req.body);
     if (!userId) {
       return res.status(400).json({ message: 'User ID is required' });
     }
@@ -158,8 +158,6 @@ export const updateProfile = async (req,res) =>{
     user.facebook = facebook || user.facebook;
     user.linkedin = linkedin || user.linkedin;
     user.twitter = twitter || user.twitter;
-    console.log("detailes updated");
-    console.log(req.files);
 
     if (req.files?.profileImg) {
       const profileResult = await uploadOnCloudinary(req.files.profileImg[0].path);
@@ -193,7 +191,7 @@ export const updateProfile = async (req,res) =>{
     }
 
     await user.save();
-
+    console.log("user details updated successfully");
     res.status(200).json({ message: 'Profile updated successfully', user });
   } catch (error) {
     console.error('Error updating profile:', error);

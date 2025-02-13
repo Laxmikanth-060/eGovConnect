@@ -11,7 +11,7 @@ export const UserProvider = ({ children }) => {
     useEffect(()=>{
         const fetchUserData = async () =>{
             try{
-                const { data } = await axios.get(`${url}/api/auth/user/authCheck`,{ withCredentials: true});
+                const { data } = await axios.get(`${url}/api/auth/authCheck`,{ withCredentials: true});
                 // console.log("auth check data in the context",data);
                 setUser(data);
             }catch(error){

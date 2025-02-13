@@ -49,7 +49,7 @@ function Header() {
   return (
     <div className='header-parent'>
       <div>
-        <img id='logo' src='logo.webp' alt='logo' />
+        <img id='logo' src='logo.png' alt='logo' />
       </div>
       <div className='nav-items'>
         {user ? (

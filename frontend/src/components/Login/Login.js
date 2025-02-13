@@ -37,7 +37,7 @@ function Login() {
         try {
             setLoader(true);
             const { data } = await axios.post(
-                `${url}/api/auth/user/login`,
+                `${url}/api/auth/login`,
                 { username, password },
                 { withCredentials: true }
             );

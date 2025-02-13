@@ -69,7 +69,7 @@ function Signup() {
     try{
       setAlert(false);
       setLoading(true);
-      const user= await axios.post(`${url}/api/auth/user/signup`,{
+      const user= await axios.post(`${url}/api/auth/signup`,{
         username,
         fullname,
         email,
@@ -78,7 +78,7 @@ function Signup() {
       }, { withCredentials: true });
 
 
-      const { userData } = await axios.get(`${url}/api/auth/user/authCheck`,{
+      const { userData } = await axios.get(`${url}/api/auth/authCheck`,{
         withCredentials:true,
       });
 

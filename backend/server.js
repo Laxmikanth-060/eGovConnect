@@ -20,7 +20,7 @@ app.use(cookieParser());
 
 app.use(
     cors({
-      origin: "https://egovconnectbackend.onrender.com",
+      origin: "https://egovconnect.onrender.com",
       credentials: true,
     })
   );

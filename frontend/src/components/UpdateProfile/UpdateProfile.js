@@ -196,7 +196,7 @@ function UpdateProfile() {
             sx={{ width: "350px" }}
             label="LinkedIn Link" variant="outlined" /></div>
 
-        <div className='profile-upload-button'>
+        {/* <div className='profile-upload-button'>
                   <Button
                   component="label"
                   variant="contained"
@@ -219,33 +219,59 @@ function UpdateProfile() {
                   onChange={submitProfileImg}
                 />
               </Button>
-              </div>
+              </div> */}
 
-        {/* <div className='post-main-container'> */}
-            <p>Cover</p>
-            <Button
+<div className='profile-upload-button'>
+          <Button
           component="label"
           variant="contained"
           startIcon={<CloudUploadIcon />}
           disabled={uploading}
           sx={{
-          // display: 'flex',
-          // justifyContent: 'center',
-          // alignItems: 'center',
-          width:'10%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          width:'70%',
           marginTop: '70px', 
           marginBottom: '20px', 
         }}
         >
-        {uploading ? 'Uploading...' : 'Upload'}
+        {uploading ? 'Uploading...' : 'Profile Photo Update'}
 
-            <input
-              type="file"
-              style={{ display: 'none' }}
-              onChange={submitCoverImg}
-            />
-          </Button>
-        {/* </div> */}
+        <input
+          type="file"
+          style={{ display: 'none' }}
+          onChange={submitProfileImg}
+        />
+      </Button>
+      </div>
+
+      <div className='profile-upload-button'>
+          <Button
+          component="label"
+          variant="contained"
+          startIcon={<CloudUploadIcon />}
+          disabled={uploading}
+          sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          width:'70%',
+          marginTop: '70px', 
+          marginBottom: '20px', 
+        }}
+        >
+        {uploading ? 'Uploading...' : 'Cover Photo Update'}
+
+        <input
+          type="file"
+          style={{ display: 'none' }}
+          onChange={submitCoverImg}
+        />
+      </Button>
+      </div>
+
+
     </div>
     <button className='profile-update-button'>Update Profile</button>
     </form>

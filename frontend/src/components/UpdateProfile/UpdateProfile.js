@@ -23,7 +23,7 @@ function UpdateProfile() {
     const [linkedin,setLinkedin]=useState(user.linkedinURL);
     const [twitter,setTwitter]=useState(user.twitterURL);
     const [uploading, setUploading] = useState("Upload");
-    const [loading,setLoading]=useState(true);
+    const [loading,setLoading]=useState(false);
 
     const url =process.env.REACT_APP_BACKEND_URL;
     
@@ -251,7 +251,7 @@ function UpdateProfile() {
           component="label"
           variant="contained"
           startIcon={<CloudUploadIcon />}
-          disabled={uploading}
+          // disabled={uploading}
           sx={{
           display: 'flex',
           justifyContent: 'center',
@@ -271,9 +271,9 @@ function UpdateProfile() {
       </Button>
       </div>
 
-
+      <button className='profile-update-button'>Update Profile</button>
     </div>
-    <button className='profile-update-button'>Update Profile</button>
+    
     </form>
 </div> 
   )

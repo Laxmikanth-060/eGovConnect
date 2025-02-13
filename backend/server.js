@@ -11,7 +11,7 @@ import cookieParser from "cookie-parser";
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 
 // Middleware
 app.use(express.json());
@@ -20,7 +20,7 @@ app.use(cookieParser());
 
 app.use(
     cors({
-      origin: "https://egovconnect.onrender.com/",
+      origin: "https://egovconnect.onrender.com",
       credentials: true,
     })
   );
@@ -39,9 +39,6 @@ app.use(
   app.use("/services",serviceRoutes);
   app.use("/api/file",fileRoutes);
 
-  app.get("/", (req, res) => {
-    res.send("Backend is running!");
-  });
 
 app.listen(PORT, () => {
     console.log(`Server running on ${PORT}!`);

@@ -178,7 +178,7 @@ function Services() {
         <section className='category-parent'>
           <Link to="/services/agri/crop loan" className='service-link'><Card img="agriculture.png" name="Crop Loans" bg="#008080"/></Link>
           <Link to="/services/agri/land registration" className='service-link'><Card img="land-property.png" name="Land Registration" bg="#e74c3c"/></Link>
-          <Link to="/services/agri/passbook" className='service-link'><Card img="license.png" name="Passbook"/></Link>
+          <Link to="/services/agri/passbook" className='service-link'><Card img="loan.png" name="Passbook"/></Link>
           <Link to="/services/agri/encumbrance certificate" className='service-link'><Card img="tax.png" name="Encumbrance Certificate" bg='#de2057'/></Link>
         </section>
         </div>

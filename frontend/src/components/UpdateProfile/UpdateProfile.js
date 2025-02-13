@@ -23,7 +23,7 @@ function UpdateProfile() {
     const [linkedin,setLinkedin]=useState(user.linkedinURL);
     const [twitter,setTwitter]=useState(user.twitterURL);
     const [uploading, setUploading] = useState("Upload");
-    const [loading,setLoading]=useState(false);
+    const [loading,setLoading]=useState(true);
 
     const url =process.env.REACT_APP_BACKEND_URL;
     
